@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+    <title>PSU Student Media Exhibition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <!-- <meta name="description" content="Portfolio of developer Matt Stevenson. Fullstack developer available for freelance work in web design and hosting services."> -->
+    <!-- <meta name="keywords" content="Matt Stevenson, portfolio, web design, full stack developer, freelance, Portland, Oregon"> -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+
+
+
+  <!-- MODAL FORM -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="contactModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="container h-100 align-items-center justify-content-center">
+
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+
+              <div class="row h-25 align-items-center justify-content-end column-row">
+                <h2>Want to talk?</h2>
+              </div>
+
+              <div class="row align-items-center justify-content-center column-row">
+                <form id="contact-form" method="post" action="contact.php" role="form">
+
+                    <div class="messages"></div>
+
+                    <div class="controls">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_name">Name *</label>
+                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your name" required="required"
+                                    data-error="Name is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_email">Email *</label>
+                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email" required="required"
+                                    data-error="Valid email is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_message">Message *</label>
+                                    <textarea id="form_message" name="message" class="form-control" placeholder="Your message" rows="4" required="required"
+                                    data-error="Please, leave me a message."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <form action="?" method="POST">
+                                  <div class="g-recaptcha" data-sitekey="6LdC35kUAAAAAJLt8gqQBxGMqwpayWxQU-BE1i9l" data-callback="recaptcha_callback"></div>
+                                  <br/>
+                                  <input disabled="disabled" id="submit_form" type="submit" class="btn btn-success btn-send" value="Submit">
+                                </form>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    <strong>*</strong> These fields are required.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar align-items-end sticky-top navbar-expand-lg text-light roboto">
+
+    <!-- MOBILE TOGGLE -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-light"><img src="favicon.png""></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <div id="logo">
+        <a class="navbar-brand" href="#">
+          <img src="psu_logo.png" alt="">
+        </a>
+      </div>
+
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown"
+            role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Organizations
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <a class="dropdown-item" href="#psutv">PSU TV</a>
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item" href="#sentinel">Pacific Sentinel</a>
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item" href="#kpsu">KPSU</a>
+
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Schedule</a>
+        </li>
+
+        <li class="nav-item">
+          <!-- <a class="nav-link" href="#">Contact</a> -->
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Contact
+          </button>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- IMAGE CAROUSEL -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="alexey-ruban.jpg" alt="First slide">
+      </div>
+
+      <div class="carousel-content my-auto">
+        <h1>STUDENT MEDIA EXHIBITION</h1>
+      </div>
+
+      <div class="carousel-item">
+        <img class="d-block w-100" src="craig_seiu_01_web-770x514.jpg" alt="Second slide">
+      </div>
+
+      <div class="carousel-item">
+        <img class="d-block w-100" src="psutv.jpg" alt="Third slide">
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <div class="container" id="about">
+
+    <div class="row pt-5">
+      <div class="col-sm">
+
+        <h2>
+          <span class="text-black">Student Media Exhibition</span><span class="text-green"> | 2020</span>
+        </h2>
+
+      </div>
+    </div>
+
+    <div class="row pt-5">
+      <div class="col-sm">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus purus eget leo varius, ac posuere ligula tincidunt. Morbi nec nibh dolor.
+          Nulla pellentesque bibendum purus, id accumsan quam auctor et. Mauris nunc metus, tincidunt elementum imperdiet nec, placerat ut augue.
+          In ultrices, mauris sit amet blandit cursus, sem arcu tempor velit, quis condimentum mauris ligula non odio. Nunc feugiat sollicitudin lectus ac euismod.
+          Morbi tristique libero non lectus consequat, at euismod felis scelerisque. Suspendisse varius convallis diam ac feugiat.
+          Etiam feugiat nulla ac mi hendrerit convallis. Aenean id faucibus nunc, at viverra lorem. Etiam at lacinia tellus.
+          Mauris facilisis libero eu lorem fringilla feugiat. Nunc augue lacus, dignissim a mollis egestas, tincidunt a nibh.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus purus eget leo varius, ac posuere ligula tincidunt. Morbi nec nibh dolor.
+          Nulla pellentesque bibendum purus, id accumsan quam auctor et. Mauris nunc metus, tincidunt elementum imperdiet nec, placerat ut augue.
+          In ultrices, mauris sit amet blandit cursus, sem arcu tempor velit, quis condimentum mauris ligula non odio. Nunc feugiat sollicitudin lectus ac euismod.
+          Morbi tristique libero non lectus consequat, at euismod felis scelerisque. Suspendisse varius convallis diam ac feugiat.
+          Etiam feugiat nulla ac mi hendrerit convallis. Aenean id faucibus nunc, at viverra lorem. Etiam at lacinia tellus.
+          Mauris facilisis libero eu lorem fringilla feugiat. Nunc augue lacus, dignissim a mollis egestas, tincidunt a nibh.</p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PSUTV SECTION -->
+  <div class="container pb-5" id="psutv">
+    <div class="row pt-5">
+      <div class="col-sm-12">
+
+        <div class="pull-left">
+          <img class="org-img" src="psutv.jpg" alt="PSU students working on a film set">
+        </div>
+
+        <h3>PSU TV</h3>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus purus eget leo varius, ac posuere ligula tincidunt. Morbi nec nibh dolor.
+          Nulla pellentesque bibendum purus, id accumsan quam auctor et. Mauris nunc metus, tincidunt elementum imperdiet nec, placerat ut augue.
+          In ultrices, mauris sit amet blandit cursus, sem arcu tempor velit, quis condimentum mauris ligula non odio. Nunc feugiat sollicitudin lectus ac euismod.
+          Morbi tristique libero non lectus consequat, at euismod felis scelerisque. Suspendisse varius convallis diam ac feugiat.
+          Etiam feugiat nulla ac mi hendrerit convallis. Aenean id faucibus nunc, at viverra lorem. Etiam at lacinia tellus.
+          Mauris facilisis libero eu lorem fringilla feugiat. Nunc augue lacus, dignissim a mollis egestas, tincidunt a nibh.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus purus eget leo varius, ac posuere ligula tincidunt. Morbi nec nibh dolor.
+          Nulla pellentesque bibendum purus, id accumsan quam auctor et. Mauris nunc metus, tincidunt elementum imperdiet nec, placerat ut augue.
+          In ultrices, mauris sit amet blandit cursus, sem arcu tempor velit, quis condimentum mauris ligula non odio. Nunc feugiat sollicitudin lectus ac euismod.
+          Morbi tristique libero non lectus consequat, at euismod felis scelerisque. Suspendisse varius convallis diam ac feugiat.
+          Etiam feugiat nulla ac mi hendrerit convallis. Aenean id faucibus nunc, at viverra lorem. Etiam at lacinia tellus.
+          Mauris facilisis libero eu lorem fringilla feugiat. Nunc augue lacus, dignissim a mollis egestas, tincidunt a nibh.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus purus eget leo varius, ac posuere ligula tincidunt. Morbi nec nibh dolor.
+          Nulla pellentesque bibendum purus, id accumsan quam auctor et. Mauris nunc metus, tincidunt elementum imperdiet nec, placerat ut augue.
+          In ultrices, mauris sit amet blandit cursus, sem arcu tempor velit, quis condimentum mauris ligula non odio. Nunc feugiat sollicitudin lectus ac euismod.
+          Morbi tristique libero non lectus consequat, at euismod felis scelerisque. Suspendisse varius convallis diam ac feugiat.
+          Etiam feugiat nulla ac mi hendrerit convallis. Aenean id faucibus nunc, at viverra lorem. Etiam at lacinia tellus.
+          Mauris facilisis libero eu lorem fringilla feugiat. Nunc augue lacus, dignissim a mollis egestas, tincidunt a nibh.</p>
+
+        <a href="https://psu.tv/" target="_blank">Learn More...</a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SENTINEL SECTION -->
+  <div class="container pb-5" id="sentinel">
+    <div class="row pt-5">
+      <div class="col-sm-12">
+
+        <div class="pull-right">
+          <img class="org-img" src="craig_seiu_01_web-770x514.jpg" alt="PSU staff marching in protest">
+        </div>
+
+        <h3>The Pacific Sentinel</h3>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus purus eget leo varius, ac posuere ligula tincidunt. Morbi nec nibh dolor.
+          Nulla pellentesque bibendum purus, id accumsan quam auctor et. Mauris nunc metus, tincidunt elementum imperdiet nec, placerat ut augue.
+          In ultrices, mauris sit amet blandit cursus, sem arcu tempor velit, quis condimentum mauris ligula non odio. Nunc feugiat sollicitudin lectus ac euismod.
+          Morbi tristique libero non lectus consequat, at euismod felis scelerisque. Suspendisse varius convallis diam ac feugiat.
+          Etiam feugiat nulla ac mi hendrerit convallis. Aenean id faucibus nunc, at viverra lorem. Etiam at lacinia tellus.
+          Mauris facilisis libero eu lorem fringilla feugiat. Nunc augue lacus, dignissim a mollis egestas, tincidunt a nibh.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus purus eget leo varius, ac posuere ligula tincidunt. Morbi nec nibh dolor.
+          Nulla pellentesque bibendum purus, id accumsan quam auctor et. Mauris nunc metus, tincidunt elementum imperdiet nec, placerat ut augue.
+          In ultrices, mauris sit amet blandit cursus, sem arcu tempor velit, quis condimentum mauris ligula non odio. Nunc feugiat sollicitudin lectus ac euismod.
+          Morbi tristique libero non lectus consequat, at euismod felis scelerisque. Suspendisse varius convallis diam ac feugiat.
+          Etiam feugiat nulla ac mi hendrerit convallis. Aenean id faucibus nunc, at viverra lorem. Etiam at lacinia tellus.
+          Mauris facilisis libero eu lorem fringilla feugiat. Nunc augue lacus, dignissim a mollis egestas, tincidunt a nibh.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus purus eget leo varius, ac posuere ligula tincidunt. Morbi nec nibh dolor.
+          Nulla pellentesque bibendum purus, id accumsan quam auctor et. Mauris nunc metus, tincidunt elementum imperdiet nec, placerat ut augue.
+          In ultrices, mauris sit amet blandit cursus, sem arcu tempor velit, quis condimentum mauris ligula non odio. Nunc feugiat sollicitudin lectus ac euismod.
+          Morbi tristique libero non lectus consequat, at euismod felis scelerisque. Suspendisse varius convallis diam ac feugiat.
+          Etiam feugiat nulla ac mi hendrerit convallis. Aenean id faucibus nunc, at viverra lorem. Etiam at lacinia tellus.
+          Mauris facilisis libero eu lorem fringilla feugiat. Nunc augue lacus, dignissim a mollis egestas, tincidunt a nibh.</p>
+
+        <a href="https://thepacificsentinel.com/" target="_blank">Learn More...</a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- KPSU SECTION -->
+  <div class="container pb-5" id="kpsu">
+    <div class="row pt-5">
+      <div class="col-sm-12">
+
+        <div class="pull-left">
+          <img class="org-img" src="alexey-ruban.jpg" alt="close up of mixing board controls">
+        </div>
+
+        <h3>KPSU</h3>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus purus eget leo varius, ac posuere ligula tincidunt. Morbi nec nibh dolor.
+          Nulla pellentesque bibendum purus, id accumsan quam auctor et. Mauris nunc metus, tincidunt elementum imperdiet nec, placerat ut augue.
+          In ultrices, mauris sit amet blandit cursus, sem arcu tempor velit, quis condimentum mauris ligula non odio. Nunc feugiat sollicitudin lectus ac euismod.
+          Morbi tristique libero non lectus consequat, at euismod felis scelerisque. Suspendisse varius convallis diam ac feugiat.
+          Etiam feugiat nulla ac mi hendrerit convallis. Aenean id faucibus nunc, at viverra lorem. Etiam at lacinia tellus.
+          Mauris facilisis libero eu lorem fringilla feugiat. Nunc augue lacus, dignissim a mollis egestas, tincidunt a nibh.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus purus eget leo varius, ac posuere ligula tincidunt. Morbi nec nibh dolor.
+          Nulla pellentesque bibendum purus, id accumsan quam auctor et. Mauris nunc metus, tincidunt elementum imperdiet nec, placerat ut augue.
+          In ultrices, mauris sit amet blandit cursus, sem arcu tempor velit, quis condimentum mauris ligula non odio. Nunc feugiat sollicitudin lectus ac euismod.
+          Morbi tristique libero non lectus consequat, at euismod felis scelerisque. Suspendisse varius convallis diam ac feugiat.
+          Etiam feugiat nulla ac mi hendrerit convallis. Aenean id faucibus nunc, at viverra lorem. Etiam at lacinia tellus.
+          Mauris facilisis libero eu lorem fringilla feugiat. Nunc augue lacus, dignissim a mollis egestas, tincidunt a nibh.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus purus eget leo varius, ac posuere ligula tincidunt. Morbi nec nibh dolor.
+          Nulla pellentesque bibendum purus, id accumsan quam auctor et. Mauris nunc metus, tincidunt elementum imperdiet nec, placerat ut augue.
+          In ultrices, mauris sit amet blandit cursus, sem arcu tempor velit, quis condimentum mauris ligula non odio. Nunc feugiat sollicitudin lectus ac euismod.
+          Morbi tristique libero non lectus consequat, at euismod felis scelerisque. Suspendisse varius convallis diam ac feugiat.
+          Etiam feugiat nulla ac mi hendrerit convallis. Aenean id faucibus nunc, at viverra lorem. Etiam at lacinia tellus.
+          Mauris facilisis libero eu lorem fringilla feugiat. Nunc augue lacus, dignissim a mollis egestas, tincidunt a nibh.</p>
+
+        <a href="https://kpsu.org/blog/" target="_blank">Learn More...</a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="container-fluid" id="footer">
+
+    <div class="row">
+
+      <div class="col-sm-12">
+
+        <a href="https://twitter.com/PSUStudentMedia?ref_src=twsrc%5Etfw"
+        class="twitter-follow-button"
+        data-show-count="false">Follow @PSUStudentMedia</a>
+        <script async src="https://platform.twitter.com/widgets.js"
+        charset="utf-8"></script>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
+<script src="js.js"></script>
+
+</html>
